@@ -1,3 +1,3 @@
 trigger AccountTrigger on Account (before Insert) {
-    accountTriggerHandler.accountUpdate(Trigger.new);
+    accountTriggerHandler.accountUpdate(Trigger.new); 
 }
