@@ -63,6 +63,12 @@
                 <elementReference>ScreenSubject</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>TestFieldForceFail__c</field>
+            <value>
+                <stringValue>Hello my old friend</stringValue>
+            </value>
+        </inputAssignments>
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
@@ -131,7 +137,7 @@
             <targetReference>Questions</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>inputAccountId</name>
         <dataType>String</dataType>
