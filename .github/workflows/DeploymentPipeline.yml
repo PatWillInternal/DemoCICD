@@ -87,7 +87,7 @@ jobs:
               if: success() || failure()
               uses: actions/upload-artifact@v3   
               with:
-                name: ChangedUpdatedComponents
+                name: Changed-Updated-Components
                 path: changed-sources/package/package.xml
                 if-no-files-found: warn # 'warn' or 'ignore' are also available, defaults to `warn`
             
@@ -96,7 +96,7 @@ jobs:
               if: success() || failure()
               uses: actions/upload-artifact@v3   
               with:
-                name: DestructiveChanges
+                name: Deleted-Components
                 path: changed-sources/destructiveChanges/destructiveChanges.xml
                 if-no-files-found: warn # 'warn' or 'ignore' are also available, defaults to `warn`
                 
