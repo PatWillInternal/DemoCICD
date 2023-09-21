@@ -70,7 +70,7 @@ jobs:
               shell: bash            
               if: ${{ contains(steps.extract_branch.outputs.branch,'release/') }}
               run: |
-                  echo ${{ secrets.SFDX_AUTH_URL_RELEASE}} > ./SFDX_AUTH_URL.txt
+                  echo ${{ secrets.SFDX_AUTH_URL_UAT}} > ./SFDX_AUTH_URL.txt
             
             ##Populate auth file with SFDX_URL secret of prod destination.
             - name: 'Populate auth file with SFDX_URL secret of production deployment destination'
@@ -88,17 +88,17 @@ jobs:
 
             - name: 'Upload change sources file'
               if: success() || failure()
-              uses: actions/upload-artifact@v3   #changed-sources/destructiveChanges
+              uses: actions/upload-artifact@v3   
               with:
-                name: changedOrUpdatedComponents
+                name: ChangedUpdatedComponents
                 path: changed-sources/package/package.xml
                 if-no-files-found: warn # 'warn' or 'ignore' are also available, defaults to `warn`
 
             - name: 'Upload destructive source file'
               if: success() || failure()
-              uses: actions/upload-artifact@v3   #changed-sources/destructiveChanges
+              uses: actions/upload-artifact@v3   
               with:
-                name: DeletedComponents
+                name: DestructiveChanges
                 path: changed-sources/destructiveChanges/destructiveChanges.xml
                 if-no-files-found: warn # 'warn' or 'ignore' are also available, defaults to `warn`
                 
